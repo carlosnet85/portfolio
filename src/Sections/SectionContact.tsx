@@ -8,7 +8,6 @@ import emailjs from "@emailjs/browser";
 
 
 export const SectionContact: React.FC = () => {
-  console.log(import.meta.env.VITE_EMAIL_JS_SERVICE_ID + " - " + import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID);
   useEffect(() => emailjs.init("KB7Zp0S0-gmzl1-ym"), []);
 
   const emailRef = useRef<HTMLInputElement>();
