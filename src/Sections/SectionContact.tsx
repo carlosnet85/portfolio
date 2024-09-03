@@ -8,13 +8,16 @@ import emailjs from "@emailjs/browser";
 
 
 export const SectionContact: React.FC = () => {
-  useEffect(() => emailjs.init("KB7Zp0S0-gmzl1-ym"), []);
-
+  
   const emailRef = useRef<HTMLInputElement>();
-
   const nameRef = useRef<HTMLInputElement>();
   const messageRef = useRef<HTMLTextAreaElement>();
+
+  const publicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
+
   const [sendingMail, isSendingMail] = useState(false);
+  
+  useEffect(() => emailjs.init(publicKey), []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
